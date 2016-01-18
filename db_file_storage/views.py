@@ -1,5 +1,4 @@
 # django
-from django.core.servers.basehttp import FileWrapper
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils.translation import ugettext as _
 # project
@@ -18,7 +17,7 @@ def get_file(request, add_attachment_headers):
         return HttpResponseBadRequest(_('Invalid request'))
 
     response = HttpResponse(
-        FileWrapper(_file),
+        _file,
         content_type=_file.mimetype
     )
 
