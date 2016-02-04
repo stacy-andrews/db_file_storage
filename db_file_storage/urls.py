@@ -2,8 +2,7 @@
 from django.conf.urls import patterns, url
 from db_file_storage.views import get_file
 
-urlpatterns = patterns(
-    'db_file_storage',
+urlpatterns = [
     url(
         r'^download/',
         get_file,
@@ -16,4 +15,4 @@ urlpatterns = patterns(
         {'add_attachment_headers': False},
         name='db_file_storage.get_file'
     )
-)
+]
